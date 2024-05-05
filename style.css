@@ -62,16 +62,6 @@ width: 6cm;
 background-color: rgb(255, 94, 0);
 color: #ffffff;
 }
-
-.space{
-    background-image: url(heroing.JPG);
-    background-size: cover;
-    height: 105px;
-    width: 375px;
-display: flex;
-justify-content: center;
-align-items: flex-end;
-}
 .box{
     border: .5px solid black;
     height: 400px;
