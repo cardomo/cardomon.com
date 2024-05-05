@@ -19,7 +19,9 @@
 }
 
 .logo{
-    background-image: url("cardomon\ logo.JPEG");
+    justify-content: center;
+    display: flex;
+    align-items: center;
     background-size: cover;
     height: 60px;
     width: 40px;
