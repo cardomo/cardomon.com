@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Form Validation</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<center>
+<body>
+    <style>
+        body {
+    padding: 10px 50px;
+    background-color: khaki;
+    display: cover;
+}
+
+.formdesign {
+    font-size: 20px;
+
+}
+
+.formdesign input {
+    width: 30%;
+    padding: 12px 20px;
+    border: 1px solid blue;
+    margin: 14px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.formerror {
+    color: red;
+}
+
+.but {
+    border-radius: 9px;
+    width: 100px;
+    height: 50px;
+    font-size: 25px;
+    margin: 22px 20px;
+}
+.signin{
+    font-size: larger;
+    display: flex;
+    margin-left:37%;
+}
+.r{
+    font-size:large;
+}
+.thanks{
+    background-color:wheat;
+    align-items: center;
+}
+
+.but{
+    font-size:medium;
+    width: 100px;
+    height: 30px;
+}
+    </style>
+    <div class="signin">
+        <div class="name">
+    <h1>Welcome to Cardomon</div><div class="r"><sub><i class="fa-regular fa-registered"></i></sub></div></h1>
+    </div>
+    <form aciton ="https://formsubmit.co/devanshsinghrollno16@gmail.com" method="post">
+        <div class="formdesign" id="name">
+            Name: <input type="text" name="fname" required><b><span class="formerror"> </span></b>
+        </div>
+
+        <div class="formdesign" id="email">
+            Email: <input type="email" name="femail" required><b><span class="formerror"> </span></b>
+        </div>
+
+        <div class="formdesign" id="phone">
+            Phone: <input type="phone" name="fphone" required><b><span class="formerror"></span></b>
+        </div>
+
+        <div class="formdesign" id="pass">
+            Password:<input type="password" name="fpass" required><b><span class="formerror"></span></b>
+        </div>
+
+        <div class="formdesign" id="cpass">
+           Re-Pass:<input type="password" name="fcpass" required><b><span class="formerror"></span></b>
+        </div>
+        
+<center>
+    <button type="submit" style="width: 140px; height: 50px;" onclick="welcome()">Submit</button>
+    <br><br>
+    <button type="skip" style="width: 140px; height: 30px;" onclick="welcome()">SKIP sign-in</button>
+    
+</center>
+    </form>
+</body>
+</center>
+
+<div class="thanks">
+    <center>
+        <h2>Thanks for visiting our website Please try to buy something!</h2>
+        </center>
+        <br>
+        <h2><b>Special thanks to our suppoters:</b></h2>
+        <p>*Shreyansh</p>
+        <br>
+        <p>*Priyank</p>
+        <br>
+        <h2><b>cards seller:</b></h2>
+        <p>*Devansh</p>
+        <br>
+        <p>*Shreyansh</p>
+<br><br>
+        <h2><b>
+            This website is made by 
+        </b></h2>
+        <br>
+        <p>*Devansh singh</p>
+
+        <br>
+        <center>
+        THANKS FOR YOUR SUPPORT
+    </center>
+</div>
+
+
+
+<script>
+    function clearErrors(){
+
+errors = document.getElementsByClassName('formerror');
+for(let item of errors)
+{
+    item.innerHTML = "";
+}
+
+
+}
+function seterror(id, error){
+//sets error inside tag of id 
+element = document.getElementById(id);
+element.getElementsByClassName('formerror')[0].innerHTML = error;
+
+}
+
+function validateForm(){
+var returnval = true;
+clearErrors();
+
+//perform validation and if validation fails, set the value of returnval to false
+var name = document.forms['myForm']["fname"].value;
+if (name.length<5){
+    seterror("name", "*Name is too short");
+    returnval = false;
+}
+
+if (name.length == 0){
+    seterror("name", "*PLEASE ENTER YOUR NAME!");
+    returnval = false;
+}
+
+var email = document.forms['myForm']["femail"].value;
+if (email.length>30){
+    seterror("email", "*Email is too long");
+    returnval = false;
+}
+var email = document.forms['myForm']["femail"].value;
+if (email.length<10){
+    seterror("email", "*Email is too Short");
+    returnval = false;
+}
+
+var phone = document.forms['myForm']["fphone"].value;
+if (phone.length != 10){
+    seterror("phone", "*Phone number should be of 10 digits!");
+    returnval = false;
+}
+
+var password = document.forms['myForm']["fpass"].value;
+if (password.length < 10){
+    seterror("pass", "*Password should be atleast 10 characters long!");
+    returnval = false;
+}
+var cpassword = document.forms['myForm']["fcpass"].value;
+if (cpassword != password){
+    seterror("cpass", "*Password NOT match!");
+    returnval = false;
+}
+
+return returnval;
+}
+function welcome() {
+window.open( "https://cardomo.github.io/cardomon.com/welcome.htm" )
+
+}
+</script>
+
+</html>
